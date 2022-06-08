@@ -20,7 +20,7 @@ De início, temos três bases de dados para trabalhar, mais uma quarta para geor
 - ***Dados do IBGE*** teve a codificação tratada e então juntada à base de dados dos imóveis, mantendo-se as variáveis de interesse.
 - ***Geopackage*** foi utilizado para georreferenciamento.
 
-## Visualizações e análises
+## Visualizações e primeiras análises
 Com um data frame mais completo, fez-se algumas visualizações para achar relações entra as variáveis, outliers e outras observações.
 Neste histograma, observamos a frequência da quantidade de imóveis por faixas de valores, na escala de milhões. É possível observar que parte significante dessa quantidade se encaixa até aproximadade 2 milhões de reais. É verificável uma correlação da quantidade de imóveis e seu valor: quanto mais imóveis numa determinada faixa de valor, menor seu valor.
 
@@ -34,9 +34,31 @@ Nos boxplots abaixo, é observado a variação de dados de metragem, número de 
 
 ## Tratando outliers
 Utilizei o método Intervalo Interquartil (Interquartile Range, IQR) para tratar outliers. Este método mede dispersão estatística pela diferença entre o quartil superior e o quartil inferior, realçando a precisão dos dados ao remover pontos periféricos que contribuem pouco para os dados como um todo.
-Abaixo, os mesmos boxplots, antes e depois de aplicado o método. Observado-se uma consistência maior nos dados, além da leitura e visualização facilitada, mesmo com a presença de alguns pontos periféricos.
+
+Abaixo, os mesmos boxplots, antes e depois de aplicado o método. Observado-se uma consistência maior nos dados, além da leitura e visualização facilitada, mesmo com a presença de alguns pontos periféricos em algumas das plotagens.
 
 ![boxplot_beforeafter](https://user-images.githubusercontent.com/95704769/172656222-d6ed3f7a-f5a9-45d1-82db-f3b65fb883d7.png)
+
+## Modelos de predições
+A partir da análise das correlações visualizada abaixo e da leitura da documentação do IBGE, escolheu-se as variáveis **V005**, **V007**, **V009** e **V011** para as predições. Todas essas variáveis se referem ao rendimento nominal de pessoas no imóvel, com algumas diferenças entre si. Em adição à essas variáveis, foi considerado a metragem, e número de quartos, banheiros e vagas para predizer o valor do imóvel.
+
+Nota-se, abaixo, que essas variáveis têm uma correlação relativamente significante com os valores de metragem e valores em reais do imóvel.
+
+![corr](https://user-images.githubusercontent.com/95704769/172659738-21a110f5-d8af-4711-ac5f-c5bb9263664e.png)
+
+Utilizei três modelos de predição diferentes: **Linear Regression**, **Polynominal Regression** and **Support Vector Machine** (SVM), sendo cada modelo avaliado pelos métodos **R²** (coeficiente de determinação) e **Mean Absolute Error** (MAE, erro médio sbsoluto).
+- ***SVM*** chegou a predizer resultados negativos para o valor do imóvel. Obteve R² = -0.052 e MAE = 809285.32.
+- **Regressão Linear e Polinomial** obtiveram os mesmos resultados, com R² = 0.611 e MAE = 471984.94.
+
+Com SVM à esquerda e Regressão Linear à direita, observa-se uma grande diferença na acurácia e na dispersão dos dados, com a Regressão Linear/Polinomial obtendo, então, resultados mais adequados.
+![lr](https://user-images.githubusercontent.com/95704769/172667222-8e6bf7ea-7802-4f0f-9fdc-ec2b23bfde4c.png)
+
+### Conclusões
+Um MAE de cerca de meio milhão nos diz que ainda há problemas com a modelagem dos dados, possivelmente apontando que a amostra não é larga o suficiente. Mas um R² de 0.611 é ao menos um resultado mediano, significando que o modelo foi capaz de predizer corretamente cerca de 60% dos dados.
+
+Abaixo, analisei e relacionei os dados até agora trabalhados um pouco mais além, a fim de explorar e chegar à outras observações.
+
+## Outras investigações
 
 
 
