@@ -53,12 +53,39 @@ Utilizei três modelos de predição diferentes: **Linear Regression**, **Polyno
 Com SVM à esquerda e Regressão Linear à direita, observa-se uma grande diferença na acurácia e na dispersão dos dados, com a Regressão Linear/Polinomial obtendo, então, resultados mais adequados.
 ![lr](https://user-images.githubusercontent.com/95704769/172667222-8e6bf7ea-7802-4f0f-9fdc-ec2b23bfde4c.png)
 
-### Conclusões
+## Conclusões
 Um MAE de cerca de meio milhão nos diz que ainda há problemas com a modelagem dos dados, possivelmente apontando que a amostra não é larga o suficiente. Mas um R² de 0.611 é ao menos um resultado mediano, significando que o modelo foi capaz de predizer corretamente cerca de 60% dos dados.
 
 Abaixo, analisei e relacionei os dados até agora trabalhados um pouco mais além, a fim de explorar e chegar à outras observações.
 
 ## Outras investigações
+### Dados adicionais sobre cada bairro
+Foi calculada a média do valor do m² de cada bairro. Com isso, não só podemos visualizar informações a partir de variáveis de interesse, como também relacionar com outros dados do IBGE, como nos exemplos abaixo:
+1. Regiões a partir de determinada variável de interesse
 
+![barplot_bottom10sp](https://user-images.githubusercontent.com/95704769/172669399-eae8bcae-f6f0-416d-858c-1464fd7bf3d8.png)
+
+2. Relação de bairros com dados do IBGE
+  - Relação do rendimento médio com média do valor do m² do bairro
+
+![mediam2_renda](https://user-images.githubusercontent.com/95704769/172673024-039a846e-3060-4d52-91c7-3bccb00089d2.png)
+
+  - Relação de rendimento e variância do rendimendo com média do valor do m² do bairro 
+
+![d2](https://user-images.githubusercontent.com/95704769/172673162-8cd7e419-7a85-48b6-b425-1b59b6fd857f.png)
+
+  - Relação de rendimento e variância do rendimendo de pessoas responsáveis e rendimento e variância do rendimendo de pessoas com 10 anos ou mais, a partir da média do valor do m² do bairro
+
+![d3](https://user-images.githubusercontent.com/95704769/172674048-f64ebb22-b2d2-48a1-acc9-3e2a16751813.png)
+
+### Visualização de mapas
+Podemos criar mapas, cruzando variáveis dos nossos dados. Como, por exemplo, visualizar a renda (variável V005 do IBGE: valor do rendimento nominal médio mensal das pessoas responsáveis por domicílios particulares permanentes) nos bairros da cidade de São Paulo:
+![sp-renda](https://user-images.githubusercontent.com/95704769/172672470-1d65c819-4f32-4131-b93c-811dc0ab6747.png)
+
+Ou de um bairro de São Paulo:
+![vmariana](https://user-images.githubusercontent.com/95704769/172672719-f1bbb918-a0e7-462f-8b8f-550d93106a83.png)
+
+Ou múltiplos, para fins de comparação:
+![barrafunda-consolação](https://user-images.githubusercontent.com/95704769/172672962-c113330e-33d0-476c-a260-4ae54814d47e.png)
 
 
