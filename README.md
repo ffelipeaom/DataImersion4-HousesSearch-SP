@@ -46,7 +46,7 @@ Nota-se, abaixo, que essas variáveis têm uma correlação relativamente signif
 
 ![corr](https://user-images.githubusercontent.com/95704769/172659738-21a110f5-d8af-4711-ac5f-c5bb9263664e.png)
 
-Utilizei três modelos de predição diferentes: **Linear Regression**, **Polynominal Regression** and **Support Vector Machine** (SVM), sendo cada modelo avaliado pelos métodos **R²** (coeficiente de determinação) e **Mean Absolute Error** (MAE, erro médio sbsoluto).
+Utilizei três modelos de predição diferentes: **Linear Regression**, **Polynomial Regression** and **Support Vector Machine** (SVM), sendo cada modelo avaliado pelos métodos **R²** (coeficiente de determinação) e **Mean Absolute Error** (MAE, erro médio sbsoluto).
 - ***SVM*** chegou a predizer resultados negativos para o valor do imóvel. Obteve R² = -0.052 e MAE = 809285.32.
 - **Regressão Linear e Polinomial** obtiveram os mesmos resultados, com R² = 0.611 e MAE = 471984.94.
 
